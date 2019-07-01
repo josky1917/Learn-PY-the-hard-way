@@ -28,12 +28,12 @@ else:
 
 # load up the words from website
 for word in urlopen(WORD_URL).readlines():
-    WORDS.append(str(word.strip(), encoding="utf-8"))
+    WORDS.append(str(word.strip(), encoding="utf-8")) ##remove a type pf char in the head and tail
 
 
 def convert(snippet, phrases):
     class_names = [w.capitalize() for w in
-                    random.sample(WORDS, snippet.count("%%%"))]
+                    random.sample(WORDS, snippet.count("%%%"))] ##random.sample : create the specified number of string list
     other_names = random.sample(WORDS, snippet.count("***"))
     results = []
     param_names = []
