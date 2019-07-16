@@ -22,7 +22,7 @@ class Engine(object):
             next_scene_name = current_scene.enter()
             current_scene = self.scene_map.next_scene(next_scene_name)
         ###many methods will be defined next.
-        current_scene.enter()
+        Finished().enter()##none type "= current_scene"
 
 class Death(Scene):
 
@@ -193,6 +193,7 @@ class EscapePod(Scene):
             """))
         
         good_pod = randint(1,5)
+        print(good_pod)
         guess = input("[pod #]> ")
 
         if int(guess) != good_pod:
@@ -228,7 +229,7 @@ class Map(object):
         'the_bridge': TheBrigde(),
         'escape_pod': EscapePod(),
         'death': Death(),
-        'finish': Finished(),
+        'finished': Finished(),
     }
 
     def __init__(self, start_scene):
